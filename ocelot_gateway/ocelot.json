@@ -1,0 +1,26 @@
+{
+    "ReRoutes": [{
+            "DownstreamPathTemplate": "/api/values",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "localhost",
+                "Port": 5010
+            }],
+            "UpstreamPathTemplate": "/value_api/values",
+            "UpstreamHttpMethod": ["Get", "POST"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/values/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "localhost",
+                "Port": 5010
+            }],
+            "UpstreamPathTemplate": "/value_api/values/{id}",
+            "UpstreamHttpMethod": ["Get", "PUT", "DELETE"]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5001"
+    }
+}
